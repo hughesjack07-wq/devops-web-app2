@@ -9,14 +9,14 @@ pipeline {
         stage('build') {
             steps {
                 dir('demo') {
-                    sh 'mvn clean'
+                    sh 'JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 mvn clean'
                 }
             }
         }
         stage('Package') {
             steps {
                 dir('demo') {
-                    sh 'mvn package'
+                    sh 'JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 mvn package'
                 }
             }
         }
